@@ -1,0 +1,91 @@
+﻿<Window x:Class="TermPaper.Rooms"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TermPaper"
+        mc:Ignorable="d"
+        Title="Rooms" Height="520" Width="333">
+    <Window.Resources>
+        <Style x:Name="TextBlock" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style x:Name="Textbox" TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+
+
+        <StackPanel>
+            
+            <TextBlock Text="Number" Height="22" Width="67"/>
+            <TextBox Name="NumberText"/>
+
+            <TextBlock Text="Floor" Height="22" Width="47"/>
+            <ComboBox x:Name="FloorText">
+                <ComboBoxItem>
+                    <TextBlock Text="1"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="2"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="3"/>
+                </ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Text="Type" Height="20" Width="43"/>
+            <ComboBox x:Name="TypeText">
+                <ComboBoxItem>
+                    <TextBlock Text="Comfort"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="NeComfort"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="VIP"/>
+                </ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Text="Capfcity" Height="21" Width="80"/>
+            <ComboBox x:Name="CapfcityText">
+                <ComboBoxItem>
+                    <TextBlock Text="1"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="2"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="3"/>
+                </ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Text="Status" Height="20" Width="57"/>
+            <ComboBox x:Name="StatusText">
+                <ComboBoxItem>
+                    <TextBlock Text="Resever"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="NOTResever"/>
+                </ComboBoxItem>
+
+            </ComboBox>
+
+            <TextBlock Text="Price" Height="19" Width="45"/>
+            <TextBox Name="PriceText"/>
+
+           
+
+
+            <Button Content="Save" FontSize="30"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

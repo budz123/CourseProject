@@ -1,0 +1,47 @@
+﻿<Application x:Class="TermPaper.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TermPaper"
+             StartupUri="MainWindow.xaml"
+             xmlns:view="clr-namespace:TermPaper.MVVM.View"
+             xmlns:viewModel="clr-namespace:TermPaper.MVVM.ViewModel">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary
+                Source="\Styles\Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:ClientsAddViewModel}">
+                <view:ClientsAddView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ClientsDeleteViewModel}">
+                <view:ClientsDeleteView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ClientsEditViewModel}">
+                <view:ClietnsEditView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:RoomsAddViewModel}">
+                <view:RoomsAddView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:RoomsDeleteViewModel}">
+                <view:RoomsDeleteView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:RoomsEditViewModel}">
+                <view:RoomsEditView/>
+            </DataTemplate>
+           
+            <DataTemplate DataType="{x:Type viewModel:ReservationsAddViewModel}">
+                <view:ReservationsAddView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ReservationsDeleteViewModel}">
+                <view:ReservationsDeleteView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ReservationsEditViewModel}">
+                <view:ReservationsEditView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

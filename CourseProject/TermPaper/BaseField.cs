@@ -38,6 +38,7 @@ namespace TermPaper
 
         public DateTime CheckOutDate { get; set; }
         public string TypePayment { get; set; }
+        public string ReseravtionStatus { get; set; }
 
       
 

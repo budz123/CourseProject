@@ -78,34 +78,94 @@ namespace TermPaper.MVVM.View
             }
             dataBase.closeConnection();
         }
+        public void RoomIDComboBoxRefresh()
+        {
+            dataBase.openConnection();
+            string queryString = "SELECT * From Rooms";
+            SqlCommand command = new SqlCommand(queryString, dataBase.getConnection());
+            SqlDataReader sqlDataReader = command.ExecuteReader();
+            RoomIDText.Items.Clear();
+            while (sqlDataReader.Read())
+            {
+                int RoomsId = sqlDataReader.GetInt32(0);
+                string Number = sqlDataReader.GetString(1);
+                int Floor = sqlDataReader.GetInt32(2);
+                string Type = sqlDataReader.GetString(3);
+                int Capacity = sqlDataReader.GetInt32(4);
+                string Price = sqlDataReader.GetString(5);
+                RoomIDText.Items.Add($"{RoomsId}: НОМЕР-{Number} ЭТАЖ-{Floor} ТИП-{Type} ЁМКОСТЬ-{Capacity} ЦЕНА-{Price}");
+            }
+            dataBase.closeConnection();
+        }
+        public void ClientIDComboBoxRefresh()
+        {
+            dataBase.openConnection();
+            string queryString = "SELECT * From Clients";
+            SqlCommand command = new SqlCommand(queryString, dataBase.getConnection());
+            SqlDataReader sqlDataReader = command.ExecuteReader();
+            ClientIDText.Items.Clear();
+            while (sqlDataReader.Read())
+            {
+                int Id = sqlDataReader.GetInt32(0);
+                string lastName = sqlDataReader.GetString(1);
+                string firstName = sqlDataReader.GetString(2);
+                ClientIDText.Items.Add($"{Id}: ИМЯ-{firstName} ФАМИЛИЯ-{lastName}");
+            }
+            dataBase.closeConnection();
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             dataBase.openConnection();
             baseField.CheckInDate = Convert.ToDateTime(DatePickerCheckInDate.Text);
             baseField.CheckOutDate = Convert.ToDateTime(DatePickerCheckOutDate.Text);
-            string query = $"UPDATE [dbo].[Reservations] SET [CheckInDate] = '{baseField.CheckInDate.Date.Year}-{baseField.CheckInDate.Date.Month}-{baseField.CheckInDate.Date.Day}', [CheckOutDate] = '{baseField.CheckOutDate.Date.Year}-{baseField.CheckOutDate.Date.Month}-{baseField.CheckInDate.Date.Day}', [RoomID] = '{RoomIDText.Text}', [ReservationStatus] = { ReservationStatusText.Text},[typePayment] = '{TypePaymentText.Text}',[ClientID] = '{ClientIDText.Text}' WHERE ReservationsID = {baseField.ReservationsId}";
+            string query = $"UPDATE [Reservations] SET [CheckInDate] = '{baseField.CheckInDate.Year}-{baseField.CheckInDate.Month}-{baseField.CheckInDate.Day}',[CheckOutDate] = '{baseField.CheckOutDate.Year}-{baseField.CheckOutDate.Month}-{baseField.CheckOutDate.Day}',[RoomID] = {baseField.RoomsId},[ReservationStatus] = '{baseField.ReseravtionStatus}',[typePayment] = '{baseField.TypePayment}',[ClientID] = {baseField.ClientsID} WHERE ReservationsID={baseField.ReservationsId}";
             SqlCommand command = new SqlCommand(query, dataBase.getConnection());
             command.ExecuteNonQuery();
             GroupComboBoxRefresh();
             dataBase.closeConnection();
+
+            GroupComboBoxRefresh();
+            RoomIDComboBoxRefresh();
+            ClientIDComboBoxRefresh();
         }
 
         private void ComboBoxEdit_DropDownClosed(object sender, EventArgs e)
         {
             baseField.ReservationsId = Convert.ToInt32(SearchElementID(ComboBoxEdit.Text));
-            GroupComboBoxRefresh_2();
+            //GroupComboBoxRefresh_2();
         }
 
         private void Edit_Loaded(object sender, RoutedEventArgs e)
         {
             GroupComboBoxRefresh();
-
+            RoomIDComboBoxRefresh();
+            ClientIDComboBoxRefresh();
         }
 
         private void ReservationStatusText_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void RoomIDText_DropDownClosed(object sender, EventArgs e)
+        {
+            baseField.RoomsId = Convert.ToInt32(SearchElementID(RoomIDText.Text));
+        }
+
+        private void ReservationStatusText_DropDownClosed(object sender, EventArgs e)
+        {
+            baseField.ReseravtionStatus = ReservationStatusText.Text;
+        }
+
+        private void TypePaymentText_DropDownClosed(object sender, EventArgs e)
+        {
+            baseField.TypePayment = SearchElementID(TypePaymentText.Text);
+        }
+
+        private void ClientIDText_DropDownClosed(object sender, EventArgs e)
+        {
+            baseField.ClientsID = Convert.ToInt32(SearchElementID(ClientIDText.Text));
         }
     }
 }

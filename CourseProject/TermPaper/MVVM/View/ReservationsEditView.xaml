@@ -24,17 +24,23 @@
             <DatePicker Name="DatePickerCheckOutDate" IsDropDownOpen="True" SelectedDateFormat="Short"/>
 
             <TextBlock Text="RoomID" Height="21"/>
-            <ComboBox Name="RoomIDText"/>
+            <ComboBox Name="RoomIDText" DropDownClosed="RoomIDText_DropDownClosed"/>
 
             <TextBlock Text="ReservationStatus" Height="22"/>
-            <ComboBox Name="ReservationStatusText" />
+            <ComboBox Name="ReservationStatusText" DropDownClosed="ReservationStatusText_DropDownClosed">
+                <TextBlock Text="Зарезервирована"/>
+                <TextBlock Text="НЕ Зарезервирована"/>
+            </ComboBox>
 
 
             <TextBlock Text="TypePayment" Height="21"/>
-            <ComboBox Name="TypePaymentText"/>
+            <ComboBox Name="TypePaymentText" DropDownClosed="TypePaymentText_DropDownClosed">
+                <TextBlock Text="Наличные"/>
+                <TextBlock Text="VISA"/>
+            </ComboBox>
 
             <TextBlock Text="ClientID" Height="22" />
-            <ComboBox Name="ClientIDText"/>
+            <ComboBox Name="ClientIDText" DropDownClosed="ClientIDText_DropDownClosed"/>
 
             <Button Content="Save" FontSize="30" Height="43" Click="Button_Click"/>
         </StackPanel>

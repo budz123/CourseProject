@@ -43,7 +43,7 @@ namespace TermPaper.MVVM.View
             }
             return SearchElementId;
         }
-        public void GroupComboBoxRefresh_2()
+        public void ReservationsComboBoxRefresh_2()
         {
             dataBase.openConnection();
             string queryString = $"SELECT * From Reservations WHERE ReservationsID = {baseField.ReservationsId}";
@@ -62,7 +62,7 @@ namespace TermPaper.MVVM.View
             }
             dataBase.closeConnection();
         }
-        public void GroupComboBoxRefresh()
+        public void ReservationsComboBoxRefresh()
         {
             dataBase.openConnection();
             string queryString = "SELECT * From Reservations";
@@ -122,10 +122,10 @@ namespace TermPaper.MVVM.View
             string query = $"UPDATE [Reservations] SET [CheckInDate] = '{baseField.CheckInDate.Year}-{baseField.CheckInDate.Month}-{baseField.CheckInDate.Day}',[CheckOutDate] = '{baseField.CheckOutDate.Year}-{baseField.CheckOutDate.Month}-{baseField.CheckOutDate.Day}',[RoomID] = {baseField.RoomsId},[ReservationStatus] = '{baseField.ReseravtionStatus}',[typePayment] = '{baseField.TypePayment}',[ClientID] = {baseField.ClientsID} WHERE ReservationsID={baseField.ReservationsId}";
             SqlCommand command = new SqlCommand(query, dataBase.getConnection());
             command.ExecuteNonQuery();
-            GroupComboBoxRefresh();
+            ReservationsComboBoxRefresh();
             dataBase.closeConnection();
 
-            GroupComboBoxRefresh();
+            ReservationsComboBoxRefresh();
             RoomIDComboBoxRefresh();
             ClientIDComboBoxRefresh();
         }
@@ -138,7 +138,7 @@ namespace TermPaper.MVVM.View
 
         private void Edit_Loaded(object sender, RoutedEventArgs e)
         {
-            GroupComboBoxRefresh();
+            ReservationsComboBoxRefresh();
             RoomIDComboBoxRefresh();
             ClientIDComboBoxRefresh();
         }

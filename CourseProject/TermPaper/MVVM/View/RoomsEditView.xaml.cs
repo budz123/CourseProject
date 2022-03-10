@@ -45,7 +45,7 @@ namespace TermPaper.MVVM.View
             }
             return SearchElementId;
         }
-        public void GroupComboBoxRefresh_2()
+        public void RoomsComboBoxRefresh_2()
         {
             dataBase.openConnection();
             string queryString = $"SELECT * From Rooms WHERE RoomsID = {baseField.RoomsId}";
@@ -68,7 +68,7 @@ namespace TermPaper.MVVM.View
         private void ComboBox_DropDownClosed(object sender, EventArgs e)
         {
             baseField.RoomsId = Convert.ToInt32(SearchElementID(ComboBoxEdit.Text));
-            GroupComboBoxRefresh_2();
+            RoomsComboBoxRefresh_2();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -77,10 +77,10 @@ namespace TermPaper.MVVM.View
             string query = $"UPDATE  [dbo].[Rooms] SET [Number] = '{NumberText.Text}', [Floor] = '{ComboBoxFloorText.Text}', [Type] = '{ComboBoxTypeText.Text}', [Capfcity] = '{ComboBoxCapfcityText.Text}', [Status] = '{ComboBoxStatusText.Text}', [Price] = '{PriceText.Text}' WHERE RoomsID = {baseField.RoomsId}";
             SqlCommand command = new SqlCommand(query, dataBase.getConnection());
             command.ExecuteNonQuery();
-            GroupComboBoxRefresh();
+            RoomsComboBoxRefresh();
             dataBase.closeConnection();
         }
-        public void GroupComboBoxRefresh()
+        public void RoomsComboBoxRefresh()
         {
             dataBase.openConnection();
             string queryString = "SELECT * From Rooms";
@@ -104,7 +104,7 @@ namespace TermPaper.MVVM.View
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
 
-            GroupComboBoxRefresh();
+            RoomsComboBoxRefresh();
         }
     }
 }

@@ -30,37 +30,37 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button Grid.Row="0" Grid.Column="0" Margin="30,30,30,30" Click="Button_Reservations">
+        <Button x:Name="ReservationsTable" Grid.Row="0" Grid.Column="0" Margin="30,30,30,30" Click="Button_Reservations">
             <TextBlock Text="Reservations"/>
 
         </Button>
-        <Button Grid.Row="0" Grid.Column="1" Margin="30,30,30,30" Click="Button_Rooms">
+        <Button Name="RoomsTable" Grid.Row="0" Grid.Column="1" Margin="30,30,30,30" Click="Button_Rooms">
             <TextBlock Text="Rooms"/>
         </Button>
-        <Button Grid.Row="0" Grid.Column="2" Margin="30,30,30,30" Click="Button_Clients">
+        <Button Name="ClientsTable" Grid.Row="0" Grid.Column="2" Margin="30,30,30,30" Click="Button_Clients">
             <TextBlock Text="Clients"/>
 
 
 
         </Button>
-      
-       
-        <Button Grid.Row="3" Grid.Column="2" Margin="40,40,40,40" Click="Button_Reservations_add">
-            <TextBlock Text="add Reservations"/>
+
+
+        <Button Name="ReservationsView" Grid.Row="3" Grid.Column="2" Margin="40,40,40,40" Click="Button_Reservations_add">
+            <TextBlock Text="ReservationsView"/>
         </Button>
 
 
 
-        <Button Grid.Row="3" Grid.Column="1" Margin="40,40,40,40" Click="Button_Rooms_add" >
-            <TextBlock Text="add Rooms"/>
+        <Button Name="RoomsView" Grid.Row="3" Grid.Column="1" Margin="40,40,40,40" Click="Button_Rooms_add" >
+            <TextBlock Text="RoomsView"/>
         </Button>
         
 
 
 
 
-        <Button Grid.Row="3" Grid.Column="0" Margin="40,40,40,40" Click="Button_Clients_add" >
-            <TextBlock Text="add Clients"/>
+        <Button Name="ClientsView" Grid.Row="3" Grid.Column="0" Margin="40,40,40,40" Click="Button_Clients_add" >
+            <TextBlock Text="ClientsView"/>
         </Button>
         
         

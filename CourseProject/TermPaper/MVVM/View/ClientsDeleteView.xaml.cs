@@ -23,6 +23,7 @@ namespace TermPaper.MVVM.View
     public partial class ClientsDeleteView : UserControl
     {
 
+        DataBase dataBase = new DataBase();
         BaseField baseField = new BaseField();
         private SqlConnection sqlConnection = null;
         public ClientsDeleteView()
@@ -49,16 +50,16 @@ namespace TermPaper.MVVM.View
 
         private void ___DeleteLoad__Loaded(object sender, RoutedEventArgs e)
         {
-            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
-            sqlConnection.Open();
-            GroupComboBoxRefresh();
+            
+            DeleteComboBoxRefresh();
 
 
         }
-        public void GroupComboBoxRefresh()
+        public void DeleteComboBoxRefresh()
         {
+            dataBase.openConnection();  
             string queryString = "SELECT * From Clients";
-            SqlCommand command = new SqlCommand(queryString, sqlConnection);
+            SqlCommand command = new SqlCommand(queryString,dataBase.getConnection());
             SqlDataReader sqlDataReader = command.ExecuteReader();
             ComboBoxDelete.Items.Clear();
             while (sqlDataReader.Read())
@@ -68,6 +69,7 @@ namespace TermPaper.MVVM.View
                 string LastName = sqlDataReader.GetString(2);
                 ComboBoxDelete.Items.Add($"{ClientsId}: {FirstName}: {LastName}");
             }         
+            dataBase.closeConnection();
         }
 
         private void ComboBox_DropDownClosed(object sender, EventArgs e)
@@ -77,11 +79,12 @@ namespace TermPaper.MVVM.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            dataBase.openConnection();
             string query = $"Delete From [dbo].[Clients] WHERE ClientsID = {baseField.ClientsID}"; 
-            SqlCommand command = new SqlCommand(query, sqlConnection);
+            SqlCommand command = new SqlCommand(query, dataBase.getConnection()); 
             command.ExecuteNonQuery();
-            GroupComboBoxRefresh();
+            DeleteComboBoxRefresh();
+            dataBase.closeConnection();
         }
     }
 }

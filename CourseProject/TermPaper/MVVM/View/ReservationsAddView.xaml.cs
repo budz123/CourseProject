@@ -65,7 +65,7 @@ namespace TermPaper.MVVM.View
         }
 
 
-        public void GroupComboBoxRefresh()
+        public void RoomsComboBoxRefresh()
         {
             dataBase.openConnection();
             string queryString = "SELECT * From Rooms";
@@ -80,7 +80,7 @@ namespace TermPaper.MVVM.View
             }
             dataBase.closeConnection();
         }
-        public void GroupComboBoxRefresh1()
+        public void ClietnsComboBoxRefresh1()
         {
             dataBase.openConnection();
             string queryString = "SELECT * From Clients";
@@ -113,8 +113,8 @@ namespace TermPaper.MVVM.View
 
         private void ___AddViewReserv__Loaded(object sender, RoutedEventArgs e)
         {
-            GroupComboBoxRefresh1();
-            GroupComboBoxRefresh();
+            ClietnsComboBoxRefresh1();
+            RoomsComboBoxRefresh();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -52,10 +52,10 @@ namespace TermPaper.MVVM.View
         private void Edit_Loaded(object sender, RoutedEventArgs e)
         {
             
-            GroupComboBoxRefresh();
+            EditComboBoxRefresh();
            
         }
-        public void GroupComboBoxRefresh_2()
+        public void EditComboBoxRefresh_2()
         {
             dataBase.openConnection();
             string queryString = $"SELECT * From Clients WHERE ClientsID = {baseField.ClientsID}";
@@ -79,10 +79,10 @@ namespace TermPaper.MVVM.View
         {
             
             baseField.ClientsID = Convert.ToInt32(SearchElementID(ComboBoxEdit.Text));
-            GroupComboBoxRefresh_2();
+            EditComboBoxRefresh_2();
            
         }
-        public void GroupComboBoxRefresh()
+        public void EditComboBoxRefresh()
         {
             dataBase.openConnection();
             string queryString = "SELECT * From Clients";
@@ -106,7 +106,7 @@ namespace TermPaper.MVVM.View
             string query = $"UPDATE [dbo].[Clients] SET [Name] = '{FirstNameTextEdit.Text}', [LastName] = '{LastNameTextEdit.Text}', [DateOfBirth] = '{baseField.DateOFBrith.Date.Year}-{baseField.DateOFBrith.Date.Month}-{baseField.DateOFBrith.Date.Day}', [Gender] = '{GenderTextEdit.Text}', [PhoneNumber] = '{PhoneNumberTextEdit.Text}', [Passport] = '{PassportTextEdit.Text}' WHERE ClientsID = {baseField.ClientsID}";
             SqlCommand command = new SqlCommand(query, dataBase.getConnection());
             command.ExecuteNonQuery();
-            GroupComboBoxRefresh();
+            EditComboBoxRefresh();
             dataBase.closeConnection();
         }
 

@@ -40,9 +40,9 @@ namespace TermPaper.MVVM.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            GetClietnts_();
+            AddClietnts_();
         }
-        public void GetClietnts_()
+        public void AddClietnts_()
         {
             FirstName = FirstNameText.Text;
             LastName = LastNameText.Text;

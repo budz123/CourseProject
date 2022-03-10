@@ -22,6 +22,7 @@ namespace TermPaper.MVVM.View
     /// </summary>
     public partial class RoomsDeleteView : UserControl
     {
+        DataBase dataBase = new DataBase();
         public RoomsDeleteView()
         {
             InitializeComponent();
@@ -49,10 +50,11 @@ namespace TermPaper.MVVM.View
         }
 
       
-        public void GroupComboBoxRefresh()
+        public void RoomsComboBoxRefresh()
         {
+            dataBase.openConnection();
             string queryString = "SELECT * From Rooms";
-            SqlCommand command = new SqlCommand(queryString, sqlConnection);
+            SqlCommand command = new SqlCommand(queryString, dataBase.getConnection());
             SqlDataReader sqlDataReader = command.ExecuteReader();
             ComboBoxDelete.Items.Clear();
             while (sqlDataReader.Read())
@@ -62,6 +64,7 @@ namespace TermPaper.MVVM.View
               
                 ComboBoxDelete.Items.Add($"{RoomsId}: {Number}");
             }
+            dataBase.closeConnection();
         }
 
        
@@ -75,17 +78,18 @@ namespace TermPaper.MVVM.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            dataBase.openConnection();
             string query = $"Delete From [dbo].[Rooms] WHERE RoomsID= {baseField.RoomsId}";
-            SqlCommand command = new SqlCommand(query, sqlConnection);
+            SqlCommand command = new SqlCommand(query, dataBase.getConnection());
             command.ExecuteNonQuery();
-            GroupComboBoxRefresh();
+            RoomsComboBoxRefresh();
+            dataBase.closeConnection();
         }
 
         private void delete_Loaded(object sender, RoutedEventArgs e)
         {
-            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
-            sqlConnection.Open();
-            GroupComboBoxRefresh();
+           
+            RoomsComboBoxRefresh();
         }
     }
 }

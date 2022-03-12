@@ -19,7 +19,7 @@
             
        
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Delete" HorizontalAlignment="Left" Height="57" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding ReservationsDeleteViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
+            <Button Content="Delete" HorizontalAlignment="Left" Height="51" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding ReservationsDeleteViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
             <Button Content="Edit" HorizontalAlignment="Left" Height="51" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding ReservationsEditViewViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
             <Button Content="Add" HorizontalAlignment="Left" Height="51"  Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding ReservationsAddViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
         </StackPanel>

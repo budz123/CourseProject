@@ -29,7 +29,8 @@
 
         </Grid.ColumnDefinitions>
 
-
+       
+       
         <Button x:Name="ReservationsTable" Grid.Row="0" Grid.Column="0" Margin="30,30,30,30" Click="Button_Reservations" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="Reservations"/>
 
@@ -39,27 +40,18 @@
         </Button>
         <Button Name="ClientsTable" Grid.Row="0" Grid.Column="2" Margin="30,30,30,30" Click="Button_Clients" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="Clients"/>
-
-
-
         </Button>
 
 
-        <Button Name="ReservationsView" Grid.Row="3" Grid.Column="2" Margin="40,40,40,40" Click="Button_Reservations_add" Style="{StaticResource StartWindosButtonsMain}">
+        <Button Name="ReservationsView" Grid.Row="3" Grid.Column="2" Margin="40,40,30,30" Click="Button_Reservations_add" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="ReservationsView"/>
         </Button>
 
-
-
-        <Button Name="RoomsView" Grid.Row="3" Grid.Column="1" Margin="40,40,40,40" Click="Button_Rooms_add" Style="{StaticResource StartWindosButtonsMain}">
+        <Button Name="RoomsView" Grid.Row="3" Grid.Column="1" Margin="40,40,30,30" Click="Button_Rooms_add" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="RoomsView"/>
         </Button>
 
-
-
-
-
-        <Button Name="ClientsView" Grid.Row="3" Grid.Column="0" Margin="40,40,40,40" Click="Button_Clients_add" Style="{StaticResource StartWindosButtonsMain}">
+        <Button Name="ClientsView" Grid.Row="3" Grid.Column="0" Margin="40,40,30,30" Click="Button_Clients_add" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="ClientsView"/>
         </Button>
         

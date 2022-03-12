@@ -9,7 +9,7 @@ namespace TermPaper
 {
     internal class DataBase
     {
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=PC-232-11\SQLEXPRESS;Initial Catalog=TermPaper;User ID=U-19;Password=19$RPEe");
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-HCFHTED\SQLEXPRESS;Initial Catalog=TermPaper;Integrated Security=True");
         public void openConnection()
         {
             if (sqlConnection.State == System.Data.ConnectionState.Closed)

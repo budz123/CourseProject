@@ -17,9 +17,9 @@
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Background="#094d74">
             <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" >
-                <Button Content="ButtonDelete" HorizontalAlignment="Left" Height="50" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding RoomsDeleteViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
-                <Button Content="ButtonEdit" HorizontalAlignment="Left" Height="50" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding RoomsEditViewViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
-                <Button Content="Buttonadd" HorizontalAlignment="Left" Height="50" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding RoomsAddViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
+                <Button Content="ButtonDelete" HorizontalAlignment="Left" Height="51" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding RoomsDeleteViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
+                <Button Content="ButtonEdit" HorizontalAlignment="Left" Height="51" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding RoomsEditViewViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
+                <Button Content="Buttonadd" HorizontalAlignment="Left" Height="51" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding RoomsAddViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
             </StackPanel>
         </Border>
 

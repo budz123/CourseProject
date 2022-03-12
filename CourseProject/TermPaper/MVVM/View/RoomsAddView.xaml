@@ -15,42 +15,42 @@
         <StackPanel Grid.Column="1">
 
             <TextBlock Text="Number" Height="22" Width="67"/>
-            <TextBox Name="NumberText"/>
+            <TextBox Name="NumberText" Style="{StaticResource ReservationsTable}"/>
 
             <TextBlock Text="Floor" Height="22" Width="47"/>
-            <ComboBox x:Name="ComboBoxFloorText">
+            <ComboBox x:Name="ComboBoxFloorText" Style="{StaticResource WorkWindowComboBox}">
                 <TextBlock Text="1"/>
                 <TextBlock Text="2"/>
                 <TextBlock Text="3"/>
             </ComboBox>
 
             <TextBlock Text="Type" Height="20" Width="43"/>
-            <ComboBox x:Name="ComboBoxTypeText" SelectionChanged="TypeText_SelectionChanged">
+            <ComboBox x:Name="ComboBoxTypeText" SelectionChanged="TypeText_SelectionChanged" Style="{StaticResource WorkWindowComboBox}">
                 <TextBlock Text="Comfort"/>
                 <TextBlock Text="NeComfort"/>
                 <TextBlock Text="VIP"/>
             </ComboBox>
 
             <TextBlock Text="Capfcity" Height="21" Width="80"/>
-            <ComboBox x:Name="ComboBoxCapfcityText">
+            <ComboBox x:Name="ComboBoxCapfcityText" Style="{StaticResource WorkWindowComboBox}">
                 <TextBlock Text="1"/>
                 <TextBlock Text="2"/>
                 <TextBlock Text="3"/>
             </ComboBox>
 
             <TextBlock Text="Status" Height="20" Width="57"/>
-            <ComboBox x:Name="ComboBoxStatusText">
+            <ComboBox x:Name="ComboBoxStatusText" Style="{StaticResource WorkWindowComboBox}">
                 <TextBlock Text="Resever"/>
                 <TextBlock Text="NOTResever"/>
             </ComboBox>
 
             <TextBlock Text="Price" Height="19" Width="45"/>
-            <TextBox Name="PriceText"/>
+            <TextBox Name="PriceText" Style="{StaticResource ReservationsTable}"/>
 
 
 
 
-            <Button Content="Save" FontSize="30" Click="Button_Click"/>
+            <Button Content="Save" FontSize="30" Click="Button_Click" Style="{StaticResource StartWindosButtonsAlt}"/>
         </StackPanel>
     </Grid>
 </UserControl>

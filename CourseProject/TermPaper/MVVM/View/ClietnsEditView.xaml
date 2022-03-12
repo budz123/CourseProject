@@ -15,30 +15,30 @@
 
         <StackPanel Grid.Column="1">
 
-            <ComboBox Name="ComboBoxEdit" DropDownClosed="ComboBoxEdit_DropDownClosed" />
+            <ComboBox Name="ComboBoxEdit" DropDownClosed="ComboBoxEdit_DropDownClosed" Style="{StaticResource WorkWindowComboBox}"/>
             <TextBlock Text="FirstNameEdit"/>
-            <TextBox Name="FirstNameTextEdit"/>
+            <TextBox Name="FirstNameTextEdit" Style="{StaticResource ReservationsTable}"/>
 
             <TextBlock Text="LastNameEdit"/>
-            <TextBox Name="LastNameTextEdit"/>
+            <TextBox Name="LastNameTextEdit" Style="{StaticResource ReservationsTable}"/>
 
 
             <TextBlock Text="PassportEdit"/>
-            <TextBox Name="PassportTextEdit"/>
+            <TextBox Name="PassportTextEdit" Style="{StaticResource ReservationsTable}"/>
 
             <TextBlock Text="DateOFBrithEdit"/>
             <DatePicker Name="DatePickerDateOfBrithEdit" IsDropDownOpen="True" SelectedDateFormat="Short"/>
 
             <TextBlock Text="GenderEdit"/>
-            <ComboBox Name="GenderTextEdit" DropDownClosed="GenderTextEdit_DropDownClosed">
+            <ComboBox Name="GenderTextEdit" DropDownClosed="GenderTextEdit_DropDownClosed" Style="{StaticResource WorkWindowComboBox}">
                 <TextBlock Text="Муж."/>
                 <TextBlock Text="Жен."/>
             </ComboBox>
 
             <TextBlock Text="PhoneNumberEdit"/>
-            <TextBox Name="PhoneNumberTextEdit"/>
+            <TextBox Name="PhoneNumberTextEdit" Style="{StaticResource ReservationsTable}"/>
 
-            <Button Content="Save" FontSize="30" Click="Button_Click"/>
+            <Button Content="Save" FontSize="30" Click="Button_Click" Style="{StaticResource StartWindosButtonsAlt}"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -82,5 +82,10 @@ namespace TermPaper.MVVM.View
             ComboBoxDeleteRefresh();
             dataBase.closeConnection();
         }
+
+        private void ComboBoxDelete_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="470" d:DesignWidth="800">
     <Grid>
-        <ComboBox Name="ComboBoxDelete" HorizontalAlignment="Center" Height="31" Margin="0,194,0,0" VerticalAlignment="Top" Width="196" DropDownClosed="ComboBoxDelete_DropDownClosed"/>
-        <Button x:Name="delete" Content="Button" HorizontalAlignment="Center" Height="35" Margin="0,256,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click" Loaded="delete_Loaded"/>
+        <ComboBox Name="ComboBoxDelete" HorizontalAlignment="Center" Height="31" Margin="0,137,0,0" VerticalAlignment="Top" Width="196" DropDownClosed="ComboBoxDelete_DropDownClosed" Style="{StaticResource WorkWindowComboBox}" SelectionChanged="ComboBoxDelete_SelectionChanged"/>
+        <Button x:Name="delete" Content="Button" HorizontalAlignment="Center" Height="35" Margin="0,212,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click" Loaded="delete_Loaded" Style="{StaticResource StartWindosButtonsAlt}"/>
 
     </Grid>
 </UserControl>

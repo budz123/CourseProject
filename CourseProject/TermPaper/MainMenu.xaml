@@ -9,8 +9,8 @@
     <Grid Margin="0,0,0,-6">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#4682B4"/>
-                <GradientStop Color="#FF626ED8" Offset="0.983"/>
+                <GradientStop Color="#094d74"/>
+                <GradientStop Color="#759cd8" Offset="0.983"/>
                 <GradientStop Color="#191970" Offset="0.217"/>
             </LinearGradientBrush>
         </Grid.Background>
@@ -30,14 +30,14 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button x:Name="ReservationsTable" Grid.Row="0" Grid.Column="0" Margin="30,30,30,30" Click="Button_Reservations">
+        <Button x:Name="ReservationsTable" Grid.Row="0" Grid.Column="0" Margin="30,30,30,30" Click="Button_Reservations" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="Reservations"/>
 
         </Button>
-        <Button Name="RoomsTable" Grid.Row="0" Grid.Column="1" Margin="30,30,30,30" Click="Button_Rooms">
+        <Button Name="RoomsTable" Grid.Row="0" Grid.Column="1" Margin="30,30,30,30" Click="Button_Rooms" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="Rooms"/>
         </Button>
-        <Button Name="ClientsTable" Grid.Row="0" Grid.Column="2" Margin="30,30,30,30" Click="Button_Clients">
+        <Button Name="ClientsTable" Grid.Row="0" Grid.Column="2" Margin="30,30,30,30" Click="Button_Clients" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="Clients"/>
 
 
@@ -45,21 +45,21 @@
         </Button>
 
 
-        <Button Name="ReservationsView" Grid.Row="3" Grid.Column="2" Margin="40,40,40,40" Click="Button_Reservations_add">
+        <Button Name="ReservationsView" Grid.Row="3" Grid.Column="2" Margin="40,40,40,40" Click="Button_Reservations_add" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="ReservationsView"/>
         </Button>
 
 
 
-        <Button Name="RoomsView" Grid.Row="3" Grid.Column="1" Margin="40,40,40,40" Click="Button_Rooms_add" >
+        <Button Name="RoomsView" Grid.Row="3" Grid.Column="1" Margin="40,40,40,40" Click="Button_Rooms_add" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="RoomsView"/>
         </Button>
-        
 
 
 
 
-        <Button Name="ClientsView" Grid.Row="3" Grid.Column="0" Margin="40,40,40,40" Click="Button_Clients_add" >
+
+        <Button Name="ClientsView" Grid.Row="3" Grid.Column="0" Margin="40,40,40,40" Click="Button_Clients_add" Style="{StaticResource StartWindosButtonsMain}">
             <TextBlock Text="ClientsView"/>
         </Button>
         
@@ -69,8 +69,8 @@
         <DataGrid x:Name="DataGrid1" Grid.ColumnSpan="3" Margin="0,110,0,0" Grid.RowSpan="3">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#4682B4"/>
-                    <GradientStop Color="#FF626ED8"/>
+                    <GradientStop Color="#094d74"/>
+                    <GradientStop Color="#9cb9d1"/>
                     <GradientStop Color="#191970" Offset="1"/>
                 </LinearGradientBrush>
             </DataGrid.Background>

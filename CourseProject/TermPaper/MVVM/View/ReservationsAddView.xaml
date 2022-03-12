@@ -24,10 +24,10 @@
             <DatePicker Name="DatePickerCheckOutDate" IsDropDownOpen="True" SelectedDateFormat="Short"/>
 
             <TextBlock Text="RoomID" Height="21"/>
-            <ComboBox Name="ComboBoxRoomIDText" DropDownClosed="ComboBoxRoomIDText_DropDownClosed"/>
+            <ComboBox Name="ComboBoxRoomIDText" DropDownClosed="ComboBoxRoomIDText_DropDownClosed" Style="{StaticResource WorkWindowComboBox}"/>
 
             <TextBlock Text="ReservationStatus" Height="22"/>
-            <ComboBox Name="ComboBoxReservationStatusText" DropDownClosed="ComboBoxReservationStatusText_DropDownClosed" >
+            <ComboBox Name="ComboBoxReservationStatusText" DropDownClosed="ComboBoxReservationStatusText_DropDownClosed" Style="{StaticResource WorkWindowComboBox}" >
                 <TextBlock Text="Reserv"/>
             </ComboBox>
                 
@@ -35,15 +35,16 @@
             
 
             <TextBlock Text="TypePayment" Height="21"/>
-            <ComboBox Name="ComboBoxTypePaymentText" DropDownClosed="ComboBoxTypePaymentText_DropDownClosed" >
+            <ComboBox Name="ComboBoxTypePaymentText" DropDownClosed="ComboBoxTypePaymentText_DropDownClosed" Style="{StaticResource WorkWindowComboBox}">
                 <TextBlock Text="VISA"/>
                 <TextBlock Text="NAlicnie"/>
             </ComboBox>
 
             <TextBlock Text="ClientID" Height="22"/>
-            <ComboBox Name="ComboBoxClientIDText" DropDownClosed="ComboBoxClientIDText_DropDownClosed"/>
+            <ComboBox Name="ComboBoxClientIDText" DropDownClosed="ComboBoxClientIDText_DropDownClosed" Style="{StaticResource WorkWindowComboBox}"/>
 
-            <Button Content="Save" FontSize="30" Height="43" Click="Button_Click"/>
+            <Button Content="Save" FontSize="30" Height="43" Click="Button_Click" Style="{StaticResource StartWindosButtonsAlt}"/>
         </StackPanel>
+        
     </Grid>
 </UserControl>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TermPaper.MVVM.View"
         mc:Ignorable="d"
-        Title="ReservationsView" Height="450" Width="800"
+        Title="ReservationsView" Height="500" Width="800"
         xmlns:viewmodel="clr-namespace:TermPaper.MVVM.ViewModel">
     <Window.DataContext>
         <viewmodel:ReservationsViewModel/>
@@ -13,12 +13,18 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="0,4*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="57" Margin="66,0,0,0" VerticalAlignment="Center" Width="137" Command="{Binding ReservationsDeleteViewCommand}"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Height="51" Margin="320,15,0,0" VerticalAlignment="Top" Width="138 " Command="{Binding ReservationsEditViewViewCommand}"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="51" Margin="575,0,0,0" VerticalAlignment="Center" Width="132" Command="{Binding ReservationsAddViewCommand}"/>
-        <Border Grid.Row="1">
+        <Border Grid.Row="0 " Background="#094d74">
+            
+       
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Delete" HorizontalAlignment="Left" Height="57" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding ReservationsDeleteViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
+            <Button Content="Edit" HorizontalAlignment="Left" Height="51" Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding ReservationsEditViewViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
+            <Button Content="Add" HorizontalAlignment="Left" Height="51"  Margin="10,10,10,10" VerticalAlignment="Center" Width="140" Command="{Binding ReservationsAddViewCommand}" Style="{StaticResource StartWindosButtonsAlt}"/>
+        </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Background="#759cd8">
             <ContentControl  Content="{Binding CurrentView}">
 
             </ContentControl>

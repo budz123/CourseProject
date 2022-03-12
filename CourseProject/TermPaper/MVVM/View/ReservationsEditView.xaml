@@ -15,7 +15,7 @@
 
         <StackPanel Grid.Column="1" Margin="0,0,0,10">
 
-            <ComboBox Name="ComboBoxEdit" DropDownClosed="ComboBoxEdit_DropDownClosed"/>
+            <ComboBox Name="ComboBoxEdit" DropDownClosed="ComboBoxEdit_DropDownClosed" Style="{StaticResource WorkWindowComboBox}"/>
             <TextBlock Text="CheckInDate" Height="20"/>
 
             <DatePicker Name="DatePickerCheckInDate" IsDropDownOpen="True" SelectedDateFormat="Short"/>
@@ -24,25 +24,25 @@
             <DatePicker Name="DatePickerCheckOutDate" IsDropDownOpen="True" SelectedDateFormat="Short"/>
 
             <TextBlock Text="RoomID" Height="21"/>
-            <ComboBox Name="RoomIDText" DropDownClosed="RoomIDText_DropDownClosed"/>
+            <ComboBox Name="RoomIDText" DropDownClosed="RoomIDText_DropDownClosed" Style="{StaticResource WorkWindowComboBox}"/>
 
             <TextBlock Text="ReservationStatus" Height="22"/>
-            <ComboBox Name="ReservationStatusText" DropDownClosed="ReservationStatusText_DropDownClosed">
+            <ComboBox Name="ReservationStatusText" DropDownClosed="ReservationStatusText_DropDownClosed" Style="{StaticResource WorkWindowComboBox}">
                 <TextBlock Text="Зарезервирована"/>
                 <TextBlock Text="НЕ Зарезервирована"/>
             </ComboBox>
 
 
             <TextBlock Text="TypePayment" Height="21"/>
-            <ComboBox Name="TypePaymentText" DropDownClosed="TypePaymentText_DropDownClosed">
+            <ComboBox Name="TypePaymentText" DropDownClosed="TypePaymentText_DropDownClosed" Style="{StaticResource WorkWindowComboBox}">
                 <TextBlock Text="Наличные"/>
                 <TextBlock Text="VISA"/>
             </ComboBox>
 
             <TextBlock Text="ClientID" Height="22" />
-            <ComboBox Name="ClientIDText" DropDownClosed="ClientIDText_DropDownClosed"/>
+            <ComboBox Name="ClientIDText" DropDownClosed="ClientIDText_DropDownClosed" Style="{StaticResource WorkWindowComboBox}"/>
 
-            <Button Content="Save" FontSize="30" Height="43" Click="Button_Click"/>
+            <Button Content="Save" FontSize="30" Height="43" Click="Button_Click" Style="{StaticResource StartWindosButtonsAlt}"/>
         </StackPanel>
     </Grid>
 </UserControl>

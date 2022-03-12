@@ -91,6 +91,11 @@ namespace TermPaper.MVVM.View
            
             RoomsComboBoxRefresh();
         }
+
+        private void ComboBoxDelete_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
 
